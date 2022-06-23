@@ -1,16 +1,18 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: "Simple Slack Message"
+description: "Send a simple slack message to a channel"
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  send-data:
+    description: "data to send"
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    default: "Hello, World!"
+  slack-hook-url:
+    description: "slack hook url"
+    required: true
+    default: "https://hooks.slack.com/services/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"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.send-data }
+    - ${{ inputs.slack-hook-url }}

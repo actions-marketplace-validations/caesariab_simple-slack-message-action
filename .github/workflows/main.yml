@@ -1,0 +1,11 @@
+on: [push]
+
+jobs:
+  simple_slack_message_job:
+    runs-on: ubuntu-latest
+    name: A job to publish a message in slack for free
+    steps:
+      - name: Publish message step
+        uses: caesariab/simple-slack-message-action@v1.0.0
+        with:
+          send-data: "Jalla, habibi"

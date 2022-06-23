@@ -1,5 +1,4 @@
 #!/bin/sh -l
-
-echo "Hello $1"
-time=$(date)
-echo "::set-output name=time::$time"
+DATA=$1
+HOOK_SLACK_URL=$2
+curl -X POST -H 'Content-type: application/json' --data "{'text': '$DATA'}" $HOOK_SLACK_URL
