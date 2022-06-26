@@ -13,5 +13,5 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.send-data }
+    - ${{ inputs.send-data }}
     - ${{ inputs.slack-hook-url }}
