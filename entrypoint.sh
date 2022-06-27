@@ -4,7 +4,7 @@ HOOK_SLACK_URL=$2
 
 send_message() {
     curl -X POST -H 'Content-type: application/json' --data "{'text': '$DATA'}" $HOOK_SLACK_URL
-    set_success true
+    set_success "true"
 }
 
 set_success() {
@@ -12,7 +12,7 @@ set_success() {
 }
 handle_error() {
     echo "Error: $1"
-    set_success false
+    set_success "false"
     exit 1
 }
 
