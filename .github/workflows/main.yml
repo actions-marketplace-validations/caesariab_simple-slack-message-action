@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Publish message step
         id: message
-        uses: caesariab/simple-slack-message-action@v1.5.1
+        uses: caesariab/simple-slack-message-action@v1.5.2
         with:
           slack-hook-url: ${{ secrets.SLACK_HOOK_URL }}
           send-data: "Jalla, habibi"
