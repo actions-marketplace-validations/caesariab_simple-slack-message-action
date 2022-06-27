@@ -20,8 +20,9 @@ This action sends a simple message to a custom incoming webhook for a slackbot, 
 The success status of the action. Return `true/false`.
 
 ## Example usage
-
+```yaml
 uses: caesariab/simple-slack-message-action@v1.4.0
 with:
   slack-hook-url: ${{ secrets.SLACK_HOOK_URL }}
   send-data: "This is a simple message"
+```
