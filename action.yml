@@ -1,6 +1,6 @@
 # action.yml
 name: "Simple Slack Message"
-description: "Send a simple slack message to a channel"
+description: "Send a simple slack message to a channel using incoming webhook"
 inputs:
   send-data:
     description: "data to send"
@@ -9,6 +9,9 @@ inputs:
   slack-hook-url:
     description: "slack hook url"
     required: true
+outputs:
+  success:
+    description: "If the message was successfully sent. true/false"
 runs:
   using: "docker"
   image: "Dockerfile"

@@ -4,18 +4,24 @@ This action prints "Hello World" or "Hello" + the name of a person to greet to t
 
 ## Inputs
 
-## `who-to-greet`
+## `send-data`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** The message to be posted in the channel. Default `"Hello, World"`.
+
+## `slack-hook-url`
+
+**Required** The name of the incoming webhook url to your slack bot. Default `""`.
+
 
 ## Outputs
 
-## `time`
+## `success`
 
-The time we greeted you.
+The success status of the action. Return `true/false`.
 
 ## Example usage
 
-uses: actions/hello-world-docker-action@v1
+uses: caesariab/simple-slack-message-action@v1.4.0
 with:
-  who-to-greet: 'Mona the Octocat'
+  slack-hook-url: ${{ secrets.SLACK_HOOK_URL }}
+  send-data: "This is a simple message"
