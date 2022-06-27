@@ -6,10 +6,10 @@ jobs:
     name: A job to publish a message in slack for free
     steps:
       - name: Publish message step
-        id: publish_message
+        id: message
         uses: caesariab/simple-slack-message-action@v1.4.1
         with:
           slack-hook-url: ${{ secrets.SLACK_HOOK_URL }}
           send-data: "Jalla, habibi"
       - name: Get the output success status
-        run: echo "The success status was ${{ steps.publish_message.outputs.success }}"
+        run: echo "The success status was ${{ steps.message.outputs.success }}"
