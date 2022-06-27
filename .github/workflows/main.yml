@@ -6,7 +6,7 @@ jobs:
     name: A job to publish a message in slack for free
     steps:
       - name: Publish message step
-        uses: caesariab/simple-slack-message-action@v1.3.1
+        uses: caesariab/simple-slack-message-action@v1.4.0
         with:
           slack-hook-url: ${{ secrets.SLACK_HOOK_URL }}
           send-data: "Jalla, habibi"
