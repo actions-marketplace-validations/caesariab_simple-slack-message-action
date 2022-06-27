@@ -12,6 +12,7 @@ jobs:
           slack-hook-url: ${{ secrets.SLACK_HOOK_URL }}
           send-data: "Jalla, habibi"
       - name: Get the output success status
-        run: echo ${{ steps.message.outputs.success }}
+        if: ${{ steps.message.outputs.success }}
+        run: echo "Success"
       - name: "Second output"
         run: echo ${{ steps.message.outputs.action_fruit }}
