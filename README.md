@@ -1,6 +1,6 @@
 # simple-slack-message-action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action sends a simple message to a custom incoming webhook for a slackbot, either paid or free.
 
 ## Inputs
 
