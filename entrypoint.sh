@@ -3,8 +3,8 @@ DATA=$1
 HOOK_SLACK_URL=$2
 
 send_message() {
-    curl -X POST -H 'Content-type: application/json' --data "{'text': '$DATA'}" $HOOK_SLACK_URL
-    echo '::set-output name=success::true'
+    curl -X POST -H 'Content-type: application/json' --data "{'text': '$DATA'}" $HOOK_SLACK_URL && echo '::set-output name=success::true'
+
 }
 
 handle_error() {
