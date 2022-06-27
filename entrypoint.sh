@@ -13,4 +13,5 @@ handle_error() {
     exit 1
 }
 
+echo "::set-output name=action_fruit::strawberry"
 send_message || handle_error "Sending message failed."
