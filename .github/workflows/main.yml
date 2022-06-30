@@ -2,12 +2,12 @@ on: [push]
 
 jobs:
   simple_slack_message_job:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     name: A job to publish a message in slack for free
     steps:
       - name: Publish message step
         id: message
-        uses: caesariab/simple-slack-message-action@v1.5.2
+        uses: caesariab/simple-slack-message-action@v1.6.0
         with:
           slack-hook-url: ${{ secrets.SLACK_HOOK_URL }}
           send-data: "Jalla, habibi"
@@ -15,4 +15,5 @@ jobs:
         if: ${{ steps.message.outputs.success_status }}
         run: echo "Success"
       - name: "Second output"
+        if: ${{ steps.message.outputs.action_fruit }}
         run: echo ${{ steps.message.outputs.action_fruit }}
