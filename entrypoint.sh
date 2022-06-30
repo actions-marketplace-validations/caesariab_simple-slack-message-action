@@ -11,9 +11,7 @@ send_message() {
 handle_error() {
     echo "Error: $1"
     echo "::set-output name=success_status::false"
-    exit 1
 }
 
 echo "::set-output name=action_fruit::blueberry"
 send_message || handle_error "Sending message failed."
-# echo "::set-output name=success_status::true"

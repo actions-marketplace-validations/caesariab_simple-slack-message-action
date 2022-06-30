@@ -7,13 +7,13 @@ jobs:
     steps:
       - name: Publish message step
         id: message
-        uses: caesariab/simple-slack-message-action@v1.6.0
+        uses: caesariab/simple-slack-message-action@v2.0.0
         with:
-          slack-hook-url: ${{ secrets.SLACK_HOOK_URL }}
+          slack-hook-url: ""
           send-data: "Jalla, habibi"
       - name: Get the output success status
         if: ${{ steps.message.outputs.success_status }}
-        run: echo "Success"
+        run: echo  ${{ steps.message.outputs.success_status }}
       - name: "Second output"
         if: ${{ steps.message.outputs.action_fruit }}
         run: echo ${{ steps.message.outputs.action_fruit }}
