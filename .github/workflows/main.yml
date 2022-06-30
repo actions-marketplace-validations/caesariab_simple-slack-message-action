@@ -13,7 +13,4 @@ jobs:
           send-data: "Jalla, habibi"
       - name: Get the output success status
         if: ${{ steps.message.outputs.success_status }}
-        run: echo  ${{ steps.message.outputs.success_status }}
-      - name: "Second output"
-        if: ${{ steps.message.outputs.action_fruit }}
-        run: echo ${{ steps.message.outputs.action_fruit }}
+        run: echo "Posting message successful"
