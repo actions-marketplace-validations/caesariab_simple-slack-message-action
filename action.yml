@@ -1,6 +1,10 @@
 # action.yml
 name: "Simple Slack Message"
-description: "Send a simple slack message to a channel using incoming webhook"
+description: "Send a simple slack message to a channel using incoming webhook for slack bot"
+author: "Thim Lohse"
+branding:
+  icon: "message-square"
+  color: "purple"
 inputs:
   send-data:
     description: "data to send"
