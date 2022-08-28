@@ -9,7 +9,7 @@ jobs:
         id: message
         uses: caesariab/simple-slack-message-action@v2.0.1
         with:
-          slack-hook-url: ""
+          slack-hook-url: ${{ secrets.SLACK_HOOK_URL }}
           send-data: "Jalla, habibi"
       - name: Get the output success status
         if: ${{ steps.message.outputs.success_status }}
